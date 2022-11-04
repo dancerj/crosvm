@@ -20,21 +20,6 @@ required-features = [ "direct" ]
 panic = 'abort'
 overflow-checks = true
 
-[profile.release-test]
-inherits = 'release'
-panic = 'unwind'
-
-# Reproduces the options used when building crosvm for Chrome OS.
-[profile.chromeos]
-inherits = "release"
-opt-level = "s"
-strip = "symbols"
-
-# Enables LTO to further reduce the size of the binary.
-[profile.lto]
-inherits = "chromeos"
-lto = true
-
 [workspace]
 # Explicitly list all crates of crosvm as workspace members since not all of them may be referenced
 # by dependencies.
