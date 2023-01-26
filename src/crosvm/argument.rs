@@ -45,12 +45,11 @@
 //! ```
 
 use std::convert::TryFrom;
+use std::env;
 use std::result;
 use std::str::FromStr;
 
 use remain::sorted;
-use terminal_size::terminal_size;
-use terminal_size::Width;
 use thiserror::Error;
 
 /// An error with argument parsing.
@@ -360,10 +359,12 @@ where
 
 const DEFAULT_COLUMNS: usize = 80;
 
-/// Get the number of columns on a display, with a reasonable default.
+/// Get the number of columns on a display.
 fn get_columns() -> usize {
-    if let Some((Width(columns), _)) = terminal_size() {
-        return columns.into();
+    if let Ok(columns_string) = env::var("COLUMNS") {
+        if let Ok(columns) = usize::from_str(&columns_string) {
+            return columns;
+        }
     }
     DEFAULT_COLUMNS
 }
@@ -861,40 +862,10 @@ I am going to give you another paragraph. However I don't know if it is useful",
     }
 
     #[test]
-    fn get_leading_part_short() {
-        assert_eq!(
-            get_leading_part(&Argument::positional("FILES", "files to operate on")).len(),
-            30
-        );
-        assert_eq!(
-            get_leading_part(&Argument::flag_or_value(
-                "gpu",
-                "[2D|3D]",
-                "Enable or configure gpu"
-            ))
-            .len(),
-            30
-        );
-        assert_eq!(
-            get_leading_part(&Argument::flag("foo", "Enable foo.")).len(),
-            20
-        );
-        assert_eq!(
-            get_leading_part(&Argument::value("bar", "stuff", "Configure bar.")).len(),
-            30
-        );
-    }
-
-    #[test]
-    fn get_leading_part_long() {
-        assert_eq!(
-            get_leading_part(&Argument::value(
-                "very-long-flag-name",
-                "stuff",
-                "Configure bar."
-            ))
-            .len(),
-            37
-        );
+    fn column() {
+        env::set_var("COLUMNS", "100");
+        assert_eq!(get_columns(), 100);
+        env::remove_var("COLUMNS");
+        assert_eq!(get_columns(), 80);
     }
 }
