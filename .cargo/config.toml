@@ -53,3 +53,14 @@ runner = "wine64"
 PKG_CONFIG_SYSROOT_DIR_armv7-unknown-linux-gnueabihf = "/usr/arm-linux-gnueabihf"
 PKG_CONFIG_SYSROOT_DIR_aarch64-unknown-linux-gnu = "/usr/aarch64_linux_gnu"
 PKG_CONFIG_SYSROOT_DIR_x86_64-pc-windows-gnu = "/usr/x86_64-w64-mingw32"
+
+[net]
+offline = true
+
+[source]
+
+[source.crates-io]
+replace-with = "debian"
+
+[source.debian]
+directory = "/usr/share/cargo/registry"
