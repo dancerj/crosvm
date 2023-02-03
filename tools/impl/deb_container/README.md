@@ -6,8 +6,13 @@ for Debian package acceptance.
 ```shell
 P=$(readlink -f $(pwd)/../../..)
 podman build -t debcrosvm .
-podman run -it --rm -v $P:$P:rw -w $(pwd) debcrosvm
+```
 
+For running.
+
+```shell
+P=$(readlink -f $(pwd)/../../..)
+podman run -it --rm -v $P:$P:rw -w $(pwd) debcrosvm
 ```
 
 
