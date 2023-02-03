@@ -6,7 +6,7 @@ edition = "2021"
 
 [features]
 power-monitor-powerd = ["power_monitor/powerd"]
-gdb = ["gdbstub", "gdbstub_arch"]
+gdb = []
 direct = []
 trace_marker = ["cros_tracing/trace_marker"]
 seccomp_trace = []
@@ -20,8 +20,6 @@ cfg-if = "1.0.0"
 cros_fdt = { path = "../cros_fdt" }
 cros_tracing = { path = "../cros_tracing" }
 devices = { path = "../devices" }
-gdbstub = { version = "0.6.3", optional = true }
-gdbstub_arch = { version = "0.2.4", optional = true }
 hypervisor = { path = "../hypervisor" }
 jail = { path = "../jail" }
 kernel_cmdline = { path = "../kernel_cmdline" }

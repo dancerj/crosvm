@@ -5,7 +5,7 @@ authors = ["The ChromiumOS Authors"]
 edition = "2021"
 
 [features]
-gdb = ["gdbstub_arch", "arch/gdb"]
+gdb = []
 direct = ["arch/direct", "devices/direct"]
 seccomp_trace = []
 swap = ["swap/enable"]
@@ -19,7 +19,6 @@ chrono = "*"
 cros_fdt = { path = "../cros_fdt" }
 data_model = { path = "../common/data_model" }
 devices = { path = "../devices" }
-gdbstub_arch = { version = "0.2.4", optional = true }
 hypervisor = { path = "../hypervisor" }
 jail = { path = "../jail" }
 kernel_cmdline = { path = "../kernel_cmdline" }
