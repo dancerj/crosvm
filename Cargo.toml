@@ -115,8 +115,6 @@ composite-disk = ["protos/composite-disk", "protobuf", "disk/composite-disk"]
 gdb = [
     "aarch64/gdb",
     "arch/gdb",
-    "gdbstub",
-    "gdbstub_arch",
     "vm_control/gdb",
     "x86_64/gdb",
 ]
@@ -268,7 +266,6 @@ all-aarch64 = [
     "crash-report",
     "default",
     "ffmpeg",
-    "gdb",
     "gfxstream",
     "gfxstream_stub",
     "libvda-stub",
@@ -330,8 +327,6 @@ devices = { path = "devices" }
 disk = { path = "disk" }
 document-features = "0.2"
 enumn = "0.1.0"
-gdbstub = { version = "0.6.3", optional = true }
-gdbstub_arch = { version = "0.2.4", optional = true }
 rutabaga_gfx = { path = "rutabaga_gfx"}
 hypervisor = { path = "hypervisor" }
 kernel_cmdline = { path = "kernel_cmdline" }
