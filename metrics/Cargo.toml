@@ -14,12 +14,5 @@ serde = { version = "1", features = ["derive"] }
 serde_json = { version = "*", optional = true }
 sync = { path = "../common/sync" }
 
-[target.'cfg(windows)'.dependencies]
-chrono = { version = "*" }
-winapi = { version = "*" }
-win_util = { path = "../win_util" }
-wmi = { version = "^0.9" }
-
-
 [build-dependencies]
 proto_build_tools = { path = "../proto_build_tools" }
