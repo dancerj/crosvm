@@ -11,8 +11,6 @@ base = { path = "../base" }
 cros_async = { path = "../cros_async" }
 libc = "*"
 win_util = { path = "../win_util" }
-winapi = "*"
-wio = "*"
 sync = { path = "../common/sync" }
 thiserror = "*"
 metrics = { path = "../metrics"}
