@@ -24,9 +24,6 @@ p9 = { path = "../common/p9" }
 rand_core = {version = "0.6", features = ["std"]}
 cfg-if = "1.0"
 
-[target.'cfg(fuzzing)'.dependencies]
-libfuzzer-sys = "=0.4.4"
-
 [features]
 default = ["disk/qcow"]
 
