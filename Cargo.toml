@@ -369,7 +369,6 @@ p9 = "*"
 [target.'cfg(windows)'.dependencies]
 anti_tamper = { path = "anti_tamper" }
 cros_async =  { path = "cros_async" }
-ctrlc = "*"
 futures = "0.3"
 gpu_display = { path = "gpu_display", optional = true }
 rand = "0.8"
