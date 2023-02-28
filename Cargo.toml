@@ -347,7 +347,7 @@ all-riscv64 = [
 ]
 
 ## All features that are compiled and tested for x86_64
-all-x86_64 = ["all-default", "plugin", "scudo"]
+all-x86_64 = ["all-default", "plugin"]
 
 ## All features that are compiled and tested for armhf
 ## Note: This platform is deprecated and will be phased out.
@@ -420,7 +420,6 @@ protobuf = { version = "3.2", optional = true }
 protos = { path = "protos", optional = true }
 remain = "*"
 resources = { path = "resources" }
-scudo = { version = "0.1", optional = true }
 serde = "*"
 serde_json = "*"
 serde_keyvalue = { path = "serde_keyvalue", features = ["argh_derive"] }
