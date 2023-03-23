@@ -41,5 +41,6 @@ userfaultfd = { version = "0.5.0", optional = true }
 userfaultfd-sys = { version = "0.4.2", optional = true }
 
 [dev_dependencies]
-libtest-mimic = "0.6"
+
+libtest-mimic = "0.5.2"
 tempfile = "*"
